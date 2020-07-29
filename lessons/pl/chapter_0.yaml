@@ -1,8 +1,8 @@
 - title: >-
-    Cześć, <img src="/favicon-32x32.png" style="display:inline;
+    Witaj, <img src="/favicon-32x32.png" style="display:inline;
     vertical-align:bottom">
   code: >-
-    https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20println!(%22Hello%2C%20%F0%9F%A6%80%22)%3B%0A%7D%0A
+    https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20println!(%22Witaj%2C%20%F0%9F%A6%80%22)%3B%0A%7D%0A
   content_markdown: |
     Witaj w *Podróży przez Rust*. Jest to przewodnik krok po kroku przez język programowania Rust.
     Rust jest często uważany za język z dość dużym progiem wejścia, ale mam nadzięję, że mogę cię przekonać o tym jak
@@ -10,6 +10,7 @@
     
     Ten przewodnik jest również dostępny w tych językach:
 
+    * [English](00_en.html)
     * [Deutsch](00_de.html)
     * [Español](00_es.html)
     * [Français](00_fr.html)

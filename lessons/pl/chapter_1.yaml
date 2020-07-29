@@ -1,138 +1,111 @@
-- title: Chapter 1 - The Basics
+- title: Rozdział 1 - Podstawy
   content_markdown: >
-    In this first chapter we're going to be exploring the very basics
-
-    with functions, variables, and the most primitive types. Glad to have you on
-    board!
+    W tym pierwszym rozdziale będziemy odkrywać podstawy dotyczące funkcji, zmiennych, oraz typów prymitywych.
+    Cieszę się, że jesteś na pokładzie!
 
 
-    Also! In case you are wondering who this adorable crab who is speaking to
-    you is, I am **Ferris**,
+    W ogóle! W razie jakbyś się zastanawiał kim jest ten uroczy krab, który właśnie do ciebie mówi,
+    nazywam się **Ferris**. Jestem nieoficjalną maskotką języka programowania Rust. Miło cię poznać.
 
-    the unofficial mascot for the Rust programming language. Nice to meet you.
 - title: The Rust Playground
   code: >-
-    https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20println!(%22Welcome%20to%20the%20playground!%20You%20can%20modify%20the%20code%20in%20here.%22)%3B%0A%7D%0A
+    https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20println!(%22Witaj!%20Mo%C5%BCesz%20modyfikowa%C4%87%20kod%20tutaj.%22)%3B%0A%7D%0A
   content_markdown: >
-    This tour uses an interactive coding tool from [Rust
-    Playground](https://play.rust-lang.org).
+    Ten przewodnik korzysta z interaktywnego kompilatora online o nazwie
+    [Rust Playground](https://play.rust-lang.org).
 
 
-    It's a great way to play around with Rust and show others your creativity
-    and challenges!
-- title: Variables
+    To świetny sposób na zabawę z Rustem oraz pokazanie innym swojej kreatywności!
+- title: Zmienne
   code: >-
     https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20%2F%2F%20rust%20infers%20the%20type%20of%20x%0A%20%20%20%20let%20x%20%3D%2013%3B%0A%20%20%20%20println!(%22%7B%7D%22%2C%20x)%3B%0A%0A%20%20%20%20%2F%2F%20rust%20can%20also%20be%20explicit%20about%20the%20type%0A%20%20%20%20let%20x%3A%20f64%20%3D%203.14159%3B%0A%20%20%20%20println!(%22%7B%7D%22%2C%20x)%3B%0A%0A%20%20%20%20%2F%2F%20rust%20can%20also%20declare%20and%20initialize%20later%2C%20but%20this%20is%20rarely%20done%0A%20%20%20%20let%20x%3B%0A%20%20%20%20x%20%3D%200%3B%0A%20%20%20%20println!(%22%7B%7D%22%2C%20x)%3B%0A%7D%0A
   content_markdown: >
-    Variables are declared using the **let** keyword.
+    Zmienne są deklarowane z użyciem słowa kluczowego **let**.
 
 
-    When assigning a value, Rust will be able to infer the type of your variable
-    99% of
-
-    the time. If it cannot you may add the type to your variable declaration.
+    Podczas przypisywania wartości, Rust jest w stanie wydedukować typ twojej zmiennej w 99% przypadków.
+    Jeśli jednak nie, możesz jawnie dodać typ zmiennej do deklaracji.
 
 
-    Notice how we can assign to the same variable name multiple times. This is
-    called variable
-
-    shadowing and the type can be changed for subsequent references to that
-    name.
+    Zauważ jak możemy przypisywać do tej samej nazwy zmiennej wiele razy.
+    Jest to przysłanianie zmiennych. Typ może być inny dla każdej kolejnej zmiennej o tej samej nazwie.
 
 
-    Variable names are always in `snake_case`.
-- title: Changing Variables
+    Nazwy zmiennych są zawsze zapisywane `snake_case`em.
+- title: Modyfikowanie zmiennych
   code: >-
     https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20let%20mut%20x%20%3D%2042%3B%0A%20%20%20%20println!(%22%7B%7D%22%2C%20x)%3B%0A%20%20%20%20x%20%3D%2013%3B%0A%20%20%20%20println!(%22%7B%7D%22%2C%20x)%3B%0A%7D%0A
   content_markdown: >
     Rust cares a great deal about what variables are modifiable. Values
+    Rust zwraca szczególną uwagę na to, które zmienne można modyfikować.
+    Wartości możemy podzieli na dwa typy:
 
-    fall into two types:
+    * **modyfikowalne** - kompilator zezwoli na odczyt i zapis do zmiennej.
 
-
-    * **mutable** - the compiler will allow the variable to be written to and
-    read from.
-
-    * **immutable** - the compiler will only allow the variable to be read from.
+    * **niemodyfikowalne** - kompilator zezwoli tylko na odczyt.
 
 
-    Mutable values are denoted with a **mut** keyword.
+    Modyfikowalne wartości są oznaczane słowem kluczowym **mut**.
 
 
-    We will have more to say on this concept later, but for now just keep an eye
-    out for this keyword.
-- title: Basic Types
+    Będziemy mieć więcej do powiedzenia na ten temat później, na razie tylko miej na oku
+    to słowo kluczowe.
+- title: Typy bazowe
   code: >-
-    https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20let%20x%20%3D%2012%3B%20%2F%2F%20by%20default%20this%20is%20i32%0A%20%20%20%20let%20a%20%3D%2012u8%3B%0A%20%20%20%20let%20b%20%3D%204.3%3B%20%2F%2F%20by%20default%20this%20is%20f64%0A%20%20%20%20let%20c%20%3D%204.3f32%3B%0A%20%20%20%20let%20bv%20%3D%20true%3B%0A%20%20%20%20let%20t%20%3D%20(13%2C%20false)%3B%0A%20%20%20%20let%20sentence%20%3D%20%22hello%20world!%22%3B%0A%20%20%20%20println!(%0A%20%20%20%20%20%20%20%20%22%7B%7D%20%7B%7D%20%7B%7D%20%7B%7D%20%7B%7D%20%7B%7D%20%7B%7D%20%7B%7D%22%2C%0A%20%20%20%20%20%20%20%20x%2C%20a%2C%20b%2C%20c%2C%20bv%2C%20t.0%2C%20t.1%2C%20sentence%0A%20%20%20%20)%3B%0A%7D%0A
+    https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20let%20x%20%3D%2012%3B%20%2F%2F%20domy%C5%9Blnie%20typu%20i32%0A%20%20%20%20let%20a%20%3D%2012u8%3B%0A%20%20%20%20let%20b%20%3D%204.3%3B%20%2F%2F%20domy%C5%9Blnie%20typu%20f64%0A%20%20%20%20let%20c%20%3D%204.3f32%3B%0A%20%20%20%20let%20bv%20%3D%20true%3B%0A%20%20%20%20let%20t%20%3D%20(13%2C%20false)%3B%0A%20%20%20%20let%20sentence%20%3D%20%22witaj%20%C5%9Bwiecie!%22%3B%0A%20%20%20%20println!(%0A%20%20%20%20%20%20%20%20%22%7B%7D%20%7B%7D%20%7B%7D%20%7B%7D%20%7B%7D%20%7B%7D%20%7B%7D%20%7B%7D%22%2C%0A%20%20%20%20%20%20%20%20x%2C%20a%2C%20b%2C%20c%2C%20bv%2C%20t.0%2C%20t.1%2C%20sentence%0A%20%20%20%20)%3B%0A%7D%0A
   content_markdown: >
-    Rust has a variety of familiar types:
+    Rust posiada wiele znajomych typów:
+
+    * logiczne - `bool` reprezentują wartości prawda/fałsz
+
+    * liczby całkowite bez znaku - `u8` `u16` `u32` `u64` `u128` reprezentują nieujemne liczby całkowite
+
+    * liczby całkowite ze znakiem - `i8` `i16` `i32` `i64` `i128` reprezentują dodatnie/ujemne liczby całkowite
+
+    * liczby całkowite o rozmiarach wskaźnika - `usize` `isize` reprezentują indeksy tablic i rozmiary obiektów
+    w pamięci
+
+    * zmiennoprzecinkowe - `f32` `f64`
+
+    * krotki - `(wartość, wartość, ...)` dla przekazywania ciągów wartości określonej długości na stosie
+
+    * tablice - `[wartość, wartość, ...]` kolekcja elementów tego samego typu o długości znanej w czasie kompilacji
+
+    * wycinki *(ang. slice)* - kolekcja elementów tego samego typu o długości znanej w czasie wykonania
+
+    * `str`(string slice) - tekst o długości znanej w czasie wykonania
 
 
-    * booleans - `bool` for representing true/false
-
-    * unsigned integers - `u8` `u16` `u32` `u64` `u128` for representing
-    positive whole numbers
-
-    * signed integers - `i8` `i16` `i32` `i64` `i128` for representing
-    positive/negative whole numbers
-
-    * pointer sized integers - `usize` `isize` for representing indexes
-
-    and sizes of things in memory
-
-    * floating point - `f32` `f64`
-
-    * tuple - `(value, value, ...)` for passing fixed sequences of values on the
-    stack
-
-    * arrays - `[value, value, ...]` a collection of similar elements with fixed
-    length known at compile time
-
-    * slices - a collection of similar elements with length known at runtime
-
-    * `str`(string slice) - text with a length known at runtime
+    Łańcuchy znaków mogą być bardziej skomplikowane niż te, do których jesteś przyzwyczajony w innych językach;
+    ponieważ Rust jest językiem programowania systemów, dba o problemy z pamięcią,
+    do których możesz nie być przyzwyczajony. Zajmiemy się tym bardziej szczegółowo później.
 
 
-    Text might be more complex than you are used to in other languages;
-
-    since Rust is a system programming language, it cares about memory 
-
-    issues you might not be used to. We will be going into this in detail later.
-
-
-    Numeric types can be explicitly specified by appending the type to the end
-    of the number (e.g. `13u32`, `2u8`).
-- title: Basic Type Conversion
+    Typy numeryczne mogą być jawnie określone poprzez dodanie typu na koniec liczby (np. `13u32`, `2u8`).
+- title: Konwersje typów podstawowych
   code: >-
     https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20let%20a%20%3D%2013u8%3B%0A%20%20%20%20let%20b%20%3D%207u32%3B%0A%20%20%20%20let%20c%20%3D%20a%20as%20u32%20%2B%20b%3B%0A%20%20%20%20println!(%22%7B%7D%22%2C%20c)%3B%0A%0A%20%20%20%20let%20t%20%3D%20true%3B%0A%20%20%20%20println!(%22%7B%7D%22%2C%20t%20as%20u8)%3B%0A%7D%0A
   content_markdown: >
-    Rust requires explicitness when it comes to numeric types. One cannot
-
-    use a `u8` for a `u32` casually without
-
-    error.
+    Rust wymaga ścisłości jeśli chodzi o typy numeryczne.
+    Nie można po prostu użyć `u8` zamiast `u32` bez błędu kompilacji.
 
 
+    Na szczęście, Rust sprawia, że konwersje stają się bardzo proste przy użyciu słowa kluczowego **as**.
     Luckily Rust makes numeric type conversions very easy with the **as**
     keyword.
-- title: Constants
+- title: Stałe
   code: >-
-    https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=const%20PI%3A%20f32%20%3D%203.14159%3B%0A%0Afn%20main()%20%7B%0A%20%20%20%20println!(%0A%20%20%20%20%20%20%20%20%22To%20make%20an%20apple%20%7B%7D%20from%20scratch%2C%20you%20must%20first%20create%20a%20universe.%22%2C%0A%20%20%20%20%20%20%20%20PI%0A%20%20%20%20)%3B%0A%7D%0A
+    https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=const%20PI%3A%20f32%20%3D%203.14159%3B%0A%0Afn%20main()%20%7B%0A%20%20%20%20println!(%0A%20%20%20%20%20%20%20%20%22Aby%20uwa%C5%BCy%C4%87%20%7B%7Dwo%20od%20zera%2C%20najpierw%20nale%C5%BCy%20stworzy%C4%87%20wszech%C5%9Bwiat.%22%2C%0A%20%20%20%20%20%20%20%20PI%0A%20%20%20%20)%3B%0A%7D%0A
   content_markdown: >
-    Constants allow us to specify a common value that's used throughout
-
-    our code many times efficiently.  Instead of copying values like variables
-
-    where they are used, constants directly replace the text identifier where
-    they
-
-    are used with their value at compile time.
+    Stałe pozwalają nam określić jedną wartość, która będzie wielokrotnie i efektywnie używana w naszym kodzie.
+    Zamiast kopiować wartości tak jak zmienne w miejscu gdzie są użyte, stałe bezpośrednio zastępują identyfikator
+    w czasie kompilacji.
 
 
-    Unlike variables, constants must always have explicit types.
+    W odróżnieniu do zmiennych, stałe zawsze muszą mieć jawnie określony typ.
 
 
-    Constant names are always in `SCREAMING_SNAKE_CASE`.
+    Nazwy stałych są zawsze zapisywane `SCREAMING_SNAKE_CASE`em.
 - title: Arrays
   code: >-
     https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20let%20nums%3A%20%5Bi32%3B%203%5D%20%3D%20%5B1%2C%202%2C%203%5D%3B%0A%20%20%20%20println!(%22%7B%3A%3F%7D%22%2C%20nums)%3B%0A%20%20%20%20println!(%22%7B%7D%22%2C%20nums%5B1%5D)%3B%0A%7D%0A
