@@ -4,7 +4,9 @@
   code: >-
     https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20println!(%22Hello%2C%20%F0%9F%A6%80%22)%3B%0A%7D%0A
   content_markdown: |
-    Witaj w *Podróży przez Rust*. Jest to przewodnik krok po kroku przez język programowania Rust. Rust jest często uważany za język z dość dużym progiem wejścia, ale mam nadzięję, że mogę cię przekonać o tym jak dużo jest do odkrycia, zanim jeszcze przejdziemy do skomplikowanych rzeczy.
+    Witaj w *Podróży przez Rust*. Jest to przewodnik krok po kroku przez język programowania Rust.
+    Rust jest często uważany za język z dość dużym progiem wejścia, ale mam nadzięję, że mogę cię przekonać o tym jak
+    dużo jest do odkrycia, zanim jeszcze przejdziemy do skomplikowanych rzeczy.
     
     Ten przewodnik jest również dostępny w tych językach:
 
@@ -20,8 +22,9 @@
     * [日本語](00_ja.html)
     * [한국어](00_ko.html)
 
-    If you have suggestions on content or would like to contribute to translations, check out Tour of Rust's [github repository](https://github.com/richardanaya/tour_of_rust).
+    Jeśli masz jakieś propozycję co do treści, albo chciałbyś wnieść swój wkład do tłumaczenia, odwiedź
+    [repozytorium Podróży przez Rust na GitHubie](https://github.com/richardanaya/tour_of_rust).
 
-    You can navigate through the tour with keyboard <span class="emoji">⬅️</span> and <span class="emoji">➡️</span>.
+    Możesz poruszać się po przewodniku używając klawiszy <span class="emoji">⬅️</span> oraz <span class="emoji">➡️</span>.
 
-    In this classic example we show Rust's support for Unicode strings.
+    W tym klasycznym przykładzie, pokażemy wsparcie Rusta dla ciągów znaków Unicode.
