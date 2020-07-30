@@ -1,40 +1,37 @@
-- title: Chapter 2 - Basic Control Flow
+- title: Rozdział 2 - Podstawowy przebieg sterowania
   content_markdown: >
-    In this chapter let's talk about basic control flow methods in Rust.
+    W tym rozdziale porozmawiamy o podstawowych metodach kontroli przebiegu sterowania w Ruście.
 
-    If you are familiar with C based languages you'll feel right at home and
-    maybe
-
-    enjoy a surprise or two.
+    Jeśli znasz języki oparte na C poczujesz jak w domu, być może nawet dasz się zaskoczyć.
 - title: if/else if/else
   content_markdown: >
-    Code branching in Rust is not surprising.
+    Instrukcje warunkowe w Ruście to nic nadzwyczajnego.
 
 
-    Conditions don't have parentheses! Did we ever really need them? Our logic
-    now looks nice and clean.
+    Warunki nie są w nawiasach! Czy w ogóle ich kiedykolwiek potrzebowaliśmy?
+    Nasza logika wygląda teraz ładnie i czysto.
 
 
-    All your usual relational and logical operators still work: `==`, `!=`, `<`,
+    Działają wszystkie typowe operatory logiczne i relacyjne: `==`, `!=`, `<`,
     `>`, `<=`, `>=`, `!`, `||`, `&&`.
   code: >-
     https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20let%20x%20%3D%2042%3B%0A%20%20%20%20if%20x%20%3C%2042%20%7B%0A%20%20%20%20%20%20%20%20println!(%22less%20than%2042%22)%3B%0A%20%20%20%20%7D%20else%20if%20x%20%3D%3D%2042%20%7B%0A%20%20%20%20%20%20%20%20println!(%22is%2042%22)%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20println!(%22greater%20than%2042%22)%3B%0A%20%20%20%20%7D%0A%7D
 - title: loop
   content_markdown: |
-    Need an infinite loop?
+    Nieskończona pętla potrzebna na gwałt?
 
-    Rust makes it easy.
+    Bułka z masłem.
 
-    `break` will escape a loop when you are ready.
+    `break` zakończy pętle gdy już będziesz gotowy.
 
-    `loop` has a secret we'll talk about soon.
+    `loop` ma sekret, o którym wkrótce porozmawiamy.
   code: >-
     https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20let%20mut%20x%20%3D%200%3B%0A%20%20%20%20loop%20%7B%0A%20%20%20%20%20%20%20%20x%20%2B%3D%201%3B%0A%20%20%20%20%20%20%20%20if%20x%20%3D%3D%2042%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20break%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%20println!(%22%7B%7D%22%2C%20x)%3B%0A%7D%0A
 - title: while
   content_markdown: |
-    `while` lets you easily add a condition to a loop.
+    `while` pozwala łatwo dodać warunek do pętli.
 
-    If the condition evaluates to `false`, the loop will exit.
+    Jeśli warunek przyjmie wartość `false` to pętla się zakończy.
   code: >-
     https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20let%20mut%20x%20%3D%200%3B%0A%20%20%20%20while%20x%20!%3D%2042%20%7B%0A%20%20%20%20%20%20%20%20x%20%2B%3D%201%3B%0A%20%20%20%20%7D%0A%7D%0A
 - title: for
