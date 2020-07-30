@@ -36,9 +36,8 @@
   code: >-
     https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20let%20mut%20x%20%3D%2042%3B%0A%20%20%20%20println!(%22%7B%7D%22%2C%20x)%3B%0A%20%20%20%20x%20%3D%2013%3B%0A%20%20%20%20println!(%22%7B%7D%22%2C%20x)%3B%0A%7D%0A
   content_markdown: >
-    Rust cares a great deal about what variables are modifiable. Values
     Rust zwraca szczególną uwagę na to, które zmienne można modyfikować.
-    Wartości możemy podzieli na dwa typy:
+    Wartości możemy podzielić na dwa typy:
 
     * **modyfikowalne** - kompilator zezwoli na odczyt i zapis do zmiennej.
 
@@ -106,81 +105,67 @@
 
 
     Nazwy stałych są zawsze zapisywane `SCREAMING_SNAKE_CASE`em.
-- title: Arrays
+- title: Tablice
   code: >-
     https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20main()%20%7B%0A%20%20%20%20let%20nums%3A%20%5Bi32%3B%203%5D%20%3D%20%5B1%2C%202%2C%203%5D%3B%0A%20%20%20%20println!(%22%7B%3A%3F%7D%22%2C%20nums)%3B%0A%20%20%20%20println!(%22%7B%7D%22%2C%20nums%5B1%5D)%3B%0A%7D%0A
   content_markdown: >
-    An *array* is a fixed length collection of data elements all of the same
-    type.
+    *Tablica* to kolekcja elementów tego samego typu o stałej długości.
 
 
-    The data type for an *array* is `[T;N]` where T is the elements' type, and N
-    is the fixed length known at compile-time.
+    Typ *tablcy* to `[T;N]`, gdzie T jest typem elementów, a N stałą długością znaną w czasie kompilacji.
 
 
-    Individual elements can be retrieved with the `[x]` operator where *x* is a
-    *usize* index (starting at 0) of the element you want.
-- title: Functions
+    Dostęp do indywidualnych elementów może zostać uzyskany dzięki operatorowi `[x]`, gdzie *x* jest
+    indeksem elementu typu *usize* (zaczynając od 0).
+- title: Funkcje
   code: >-
     https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20add(x%3A%20i32%2C%20y%3A%20i32)%20-%3E%20i32%20%7B%0A%20%20%20%20return%20x%20%2B%20y%3B%0A%7D%0A%0Afn%20main()%20%7B%0A%20%20%20%20println!(%22%7B%7D%22%2C%20add(42%2C%2013))%3B%0A%7D%0A
   content_markdown: >
-    A function has zero or more parameters.
+    Funkcja ma zero lub więcej parametrów.
 
 
-    In this example, add takes two arguments of type `i32` (signed integer of
-    32-bit
-
-    length).
+    W tym przykładzie, add przyjmuje dwa argumenty typu `i32` (32 bitówych liczb całkowitych ze znakiem).
 
 
-    Function names are always in `snake_case`.
-- title: Multiple Return Values
+    Nazwy funkcji zapisujemy `snake_case`em.
+- title: Wiele wartości zwracanych
   code: >-
-    https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20swap(x%3A%20i32%2C%20y%3A%20i32)%20-%3E%20(i32%2C%20i32)%20%7B%0A%20%20%20%20return%20(y%2C%20x)%3B%0A%7D%0A%0Afn%20main()%20%7B%0A%20%20%20%20%2F%2F%20return%20a%20tuple%20of%20return%20values%0A%20%20%20%20let%20result%20%3D%20swap(123%2C%20321)%3B%0A%20%20%20%20println!(%22%7B%7D%20%7B%7D%22%2C%20result.0%2C%20result.1)%3B%0A%0A%20%20%20%20%2F%2F%20destructure%20the%20tuple%20into%20two%20variables%20names%0A%20%20%20%20let%20(a%2C%20b)%20%3D%20swap(result.0%2C%20result.1)%3B%0A%20%20%20%20println!(%22%7B%7D%20%7B%7D%22%2C%20a%2C%20b)%3B%0A%7D%0A
+    https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20swap(x%3A%20i32%2C%20y%3A%20i32)%20-%3E%20(i32%2C%20i32)%20%7B%0A%20%20%20%20return%20(y%2C%20x)%3B%0A%7D%0A%0Afn%20main()%20%7B%0A%20%20%20%20%2F%2F%20zwr%C3%B3%C4%87%20krotk%C4%99%20warto%C5%9Bci%20zwracanych%0A%20%20%20%20let%20result%20%3D%20swap(123%2C%20321)%3B%0A%20%20%20%20println!(%22%7B%7D%20%7B%7D%22%2C%20result.0%2C%20result.1)%3B%0A%0A%20%20%20%20%2F%2F%20rozbij%20krotk%C4%99%20na%20dwa%20indentyfikatory%0A%20%20%20%20let%20(a%2C%20b)%20%3D%20swap(result.0%2C%20result.1)%3B%0A%20%20%20%20println!(%22%7B%7D%20%7B%7D%22%2C%20a%2C%20b)%3B%0A%7D%0A
   content_markdown: >
-    Functions can return multiple values by returning a **tuple**
-
-    of values.
+    Funkcję mogą zwracać wiele wartości poprzez **krotkę**.
 
 
-    Tuple elements can be referenced by their index number.
+    Do elementów kortki można odnosić się poprzez ich indeks.
 
 
-    Rust supports various kinds of destructuring that we will see in many forms,
-    allowing
-
-    us to extract sub-pieces of data structures in ergonomic ways. Be on the
-    lookout!
-- title: Returning Nothing
+    Rust obsługuje wiele rozdzajów rozbijania, które zobaczymy w wielu formach,
+    pozwalając nam wyodrębniać podelementy struktur danych w ergonomiczny sposób.
+    Bądź czujny!
+- title: Zwracanie niczego
   content_markdown: >
-    If no return type is specified for a function, it returns an empty tuple,
-    also known as a *unit*.
+    Jeśli typ zwracany nie jest określony, funkcja zwraca pustą krotkę, znaną także jako *unit*.
 
 
-    An empty tuple is represented by `()`.
+    Pusta krotka jest reprezentowana poprzez `()`.
 
 
-    Using `()` is uncommon, but will come up often enough that it's good to know
-    whats happening.
+    Używanie '()' nie jest powszechne, ale pojawia się na tyle często, że dobrze wiedzieć co się dzieje.
   code: >-
-    https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20make_nothing()%20-%3E%20()%20%7B%0A%20%20%20%20return%20()%3B%0A%7D%0A%0A%2F%2F%20the%20return%20type%20is%20implied%20as%20()%0Afn%20make_nothing2()%20%7B%0A%20%20%20%20%2F%2F%20this%20function%20will%20return%20()%20if%20nothing%20is%20specified%20to%20return%0A%7D%0A%0Afn%20main()%20%7B%0A%20%20%20%20let%20a%20%3D%20make_nothing()%3B%0A%20%20%20%20let%20b%20%3D%20make_nothing2()%3B%0A%0A%20%20%20%20%2F%2F%20Printing%20a%20debug%20string%20for%20a%20and%20b%0A%20%20%20%20%2F%2F%20Because%20it's%20hard%20to%20print%20nothingness%0A%20%20%20%20println!(%22The%20value%20of%20a%3A%20%7B%3A%3F%7D%22%2C%20a)%3B%0A%20%20%20%20println!(%22The%20value%20of%20b%3A%20%7B%3A%3F%7D%22%2C%20b)%3B%0A%7D%0A
-- title: Chapter 1 - Conclusion
+    https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&code=fn%20make_nothing()%20-%3E%20()%20%7B%0A%20%20%20%20return%20()%3B%0A%7D%0A%0A%2F%2F%20typ%20zwracany%20to%20()%0Afn%20make_nothing2()%20%7B%0A%20%20%20%20%2F%2F%20funkcja%20zwr%C3%B3ci%20()%2C%20je%C5%9Bli%20warto%C5%9B%C4%87%20zwracana%20nie%20jest%20okre%C5%9Blona%0A%7D%0A%0Afn%20main()%20%7B%0A%20%20%20%20let%20a%20%3D%20make_nothing()%3B%0A%20%20%20%20let%20b%20%3D%20make_nothing2()%3B%0A%0A%20%20%20%20%2F%2F%20Wypisywanie%20debug%20stringa%20dla%20a%20i%20b%2C%0A%20%20%20%20%2F%2F%20poniewa%C5%BC%20ci%C4%99%C5%BCko%20wypisa%C4%87%20nico%C5%9B%C4%87%0A%20%20%20%20println!(%22The%20value%20of%20a%3A%20%7B%3A%3F%7D%22%2C%20a)%3B%0A%20%20%20%20println!(%22The%20value%20of%20b%3A%20%7B%3A%3F%7D%22%2C%20b)%3B%0A%7D%0A
+- title: Rozdział 1 - Wnioski
   content_markdown: >
-    Nice job so far! The basics of Rust aren't so bad, right?  We're
+    Jak dotąd niezła robota! Podstawy Rusta nie są takie złe, prawda?
 
-    getting a peek into how the Rust compiler thinks.  As a system programming
-    language 
+    Zaczynamy zagłębiać się w to jak kompilator Rusta myśli.
 
-    it cares a lot about the size  of values in memory, whether things can be
-    modified or not, 
+    Jako język programowania systemowego Rust bardzo dba o rozmiar zmiennych w pamięci,
+    o to czy obiekty można modyfikować, czy nie, upewnia się, czy twoja matematyka jest taka, jak chcesz.
 
-    and making sure your math is what you want it to be. Next up we'll be
-    looking at some old friends:
-
-    `if` tests and `for` loops.
+    Następnie przyjrzymy się starym znajomym:
+    instrukcjom warunkowym `if` oraz pętlom `for`.
 
 
-    More Resources:
+    Zobacz więcej:
 
 
     * [Youtube: Rust Cast - A deeper dive on Rust's primitive number
